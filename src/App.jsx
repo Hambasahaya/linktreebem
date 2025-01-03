@@ -209,7 +209,7 @@ function App() {
       scene.add(textMesh);
     });
     fontLoader.load('/font.json', (font) => {
-      const textGeometry = new TextGeometry('UNIVERITAS MERCU BUANA', {
+      const textGeometry = new TextGeometry('UNIVERSITAS MERCU BUANA', {
         font: font,
         size: 0.140, 
         height: 0,
