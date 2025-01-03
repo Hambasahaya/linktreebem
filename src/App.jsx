@@ -18,8 +18,8 @@ function App() {
  
     const cardsData = [
       { text: 'Wadah Kritik dan Saran BEM FASILKOM', url: 'https://docs.google.com/forms/d/e/1FAIpQLSf5_wIXNMw2p1SbRBMD1SqEhoR0N7xk47BYdDQKuVTNcosdqQ/viewform' },
-      { text: 'Contac Person BEM FASLIKOM (Nadya)', url: 'https://wa.link/i667j7' },
-      { text: 'Contac Person BEM FASLIKOM (Favian)', url: 'https://wa.link/5k4c9q' },
+      { text: 'Contact Person BEM FASLIKOM (Nadya)', url: 'https://wa.link/i667j7' },
+      { text: 'Contact Person BEM FASLIKOM (Favian)', url: 'https://wa.link/5k4c9q' },
     ];
     const cardGeometry = new RoundedBoxGeometry(4, 0.5, 0.1, 6, 0.2); 
     const cardMaterial = new THREE.MeshBasicMaterial({ color: 0x1a1a40 }); 
