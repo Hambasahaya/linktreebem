@@ -63,6 +63,12 @@ function App() {
     ring.rotation.y = Math.PI / -1.1;
     ring.position.set(0, 0.8, 0);
     scene.add(ring);
+
+
+
+
+
+
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
 
@@ -72,19 +78,20 @@ function App() {
 
     const starGeometry = new THREE.BufferGeometry();
     const starMaterial = new THREE.PointsMaterial({
-      size: 0.01,
+      size: 0.03,
       vertexColors: true,
+      fog:true
     });
 
-    const starCount = 1000;
+    const starCount = 8000;
     const positions = [];
     const starColors = [];
     const color = new THREE.Color();
 
     for (let i = 0; i < starCount; i++) {
-      positions.push((Math.random() - 0.5) * 100);
-      positions.push((Math.random() - 0.5) * 100);
-      positions.push((Math.random() - 0.5) * 100);
+      positions.push((Math.random() - 0.5) * 400);
+      positions.push((Math.random() - 0.5) * 400);
+      positions.push((Math.random() - 0.5) * 400);
 
       color.setHSL(Math.random(), 1, 0.7);
       starColors.push(color.r, color.g, color.b);
@@ -193,8 +200,8 @@ function App() {
         metalness: 0,
         roughness: 0,
         emissive: '#F9E400',
-        emissiveIntensity: 0.8,
-        shininess: 900,
+        emissiveIntensity: 4,
+        shininess: 10000,
       });
 
       const textMesh = new THREE.Mesh(textGeometry, textMaterial);
@@ -212,6 +219,9 @@ function App() {
         color: 0xff0000, 
         metalness: 0,
         roughness: 0,
+        emissive: '0xff0000',
+        emissiveIntensity: 4,
+        shininess: 10000,
       });
 
       const textMesh = new THREE.Mesh(textGeometry, textMaterial);
@@ -229,7 +239,9 @@ function App() {
       requestAnimationFrame(animate);
       sphere.rotation.y += 0.01;
       ring.rotation.z += 0.02;
-      stars.rotation.y += 0.001;
+      stars.rotation.y -= 0.001;
+      stars.rotation.x -= 0.001;
+      stars.rotation.z += 0.001;
       controls.update();
       renderer.render(scene, camera);
     }
